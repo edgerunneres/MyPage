@@ -74,8 +74,9 @@
   function renderProjects() {
     const grid = byId("project-grid");
     grid.innerHTML = "";
-    data.projects.forEach((project) => {
+    data.projects.forEach((project, index) => {
       const card = el("article", "project-card tilt-card");
+      const detailId = `project-detail-${index}`;
       const head = el("div", "project-head");
       const titleGroup = el("div");
       titleGroup.append(el("div", "project-status", project.status), el("h3", "", project.title));
@@ -101,6 +102,20 @@
       );
 
       if (project.links.length) card.append(links);
+      if (project.details && project.details.length) {
+        const details = el("div", "project-details");
+        details.id = detailId;
+        const detailList = el("ul");
+        project.details.forEach((detail) => detailList.append(el("li", "", detail)));
+        details.append(detailList);
+
+        const toggle = el("button", "project-toggle magnetic");
+        toggle.type = "button";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", detailId);
+        toggle.append(icon("plus"), el("span", "", "展开细节"));
+        card.append(toggle, details);
+      }
       grid.append(card);
     });
   }
@@ -241,10 +256,13 @@
   function initProofFilter() {
     const buttons = document.querySelectorAll("[data-proof-filter]");
     const cards = document.querySelectorAll("[data-proof-type]");
+    const grid = byId("proof-grid");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         const filter = button.dataset.proofFilter;
         buttons.forEach((item) => item.classList.toggle("active", item === button));
+        grid.classList.remove("is-switching");
+        window.requestAnimationFrame(() => grid.classList.add("is-switching"));
         cards.forEach((card) => {
           card.classList.toggle("is-hidden", filter !== "all" && card.dataset.proofType !== filter);
         });
@@ -307,6 +325,95 @@
       button.addEventListener("pointerleave", () => {
         button.style.transform = "";
       });
+    });
+  }
+
+  function initPreloader() {
+    const preloader = byId("preloader");
+    if (!preloader) return;
+    const hide = () => {
+      preloader.classList.add("is-complete");
+      window.setTimeout(() => preloader.remove(), reducedMotion ? 0 : 520);
+    };
+    window.setTimeout(hide, reducedMotion ? 80 : 980);
+  }
+
+  function initCursorOrb() {
+    const orb = byId("cursor-orb");
+    if (!orb || reducedMotion) return;
+    let targetX = window.innerWidth * 0.5;
+    let targetY = window.innerHeight * 0.35;
+    let currentX = targetX;
+    let currentY = targetY;
+
+    window.addEventListener(
+      "pointermove",
+      (event) => {
+        targetX = event.clientX;
+        targetY = event.clientY;
+        orb.classList.add("is-active");
+      },
+      { passive: true }
+    );
+
+    function draw() {
+      currentX += (targetX - currentX) * 0.16;
+      currentY += (targetY - currentY) * 0.16;
+      orb.style.setProperty("--cursor-x", `${currentX}px`);
+      orb.style.setProperty("--cursor-y", `${currentY}px`);
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  function initClickEffects() {
+    const layer = byId("click-layer");
+    if (!layer || reducedMotion) return;
+    window.addEventListener("pointerdown", (event) => {
+      const ripple = el("span", "click-ripple");
+      ripple.style.left = `${event.clientX}px`;
+      ripple.style.top = `${event.clientY}px`;
+      layer.append(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    });
+  }
+
+  function initProjectToggles() {
+    document.querySelectorAll(".project-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".project-card");
+        const expanded = !card.classList.contains("is-expanded");
+        card.classList.toggle("is-expanded", expanded);
+        button.setAttribute("aria-expanded", String(expanded));
+        button.querySelector("span").textContent = expanded ? "收起细节" : "展开细节";
+        const currentIcon = button.querySelector("svg, i");
+        const nextIcon = icon(expanded ? "minus" : "plus");
+        if (currentIcon) currentIcon.replaceWith(nextIcon);
+        else button.prepend(nextIcon);
+        initIcons();
+      });
+    });
+  }
+
+  function initDock() {
+    const dock = document.querySelector(".control-dock");
+    if (!dock) return;
+    const focusButton = dock.querySelector('[data-dock-action="focus"]');
+    const spotlightButton = dock.querySelector('[data-dock-action="spotlight"]');
+    const sections = [...document.querySelectorAll("main > section")];
+
+    focusButton.addEventListener("click", () => {
+      const active = document.body.classList.toggle("is-focus-mode");
+      focusButton.setAttribute("aria-pressed", String(active));
+    });
+
+    spotlightButton.addEventListener("click", () => {
+      const candidates = sections.filter((section) => section.id || section.querySelector("h2"));
+      const section = candidates[Math.floor(Math.random() * candidates.length)];
+      section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+      section.classList.remove("is-spotlight");
+      window.setTimeout(() => section.classList.add("is-spotlight"), 120);
+      window.setTimeout(() => section.classList.remove("is-spotlight"), 1500);
     });
   }
 
@@ -403,6 +510,7 @@
   }
 
   setProfile();
+  initPreloader();
   renderMetrics();
   renderPillars();
   renderProjects();
@@ -417,5 +525,9 @@
   initScrollState();
   initTilt();
   initMagneticButtons();
+  initCursorOrb();
+  initClickEffects();
+  initProjectToggles();
+  initDock();
   initAmbientCanvas();
 })();

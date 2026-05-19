@@ -55,6 +55,7 @@ window.portfolioData = {
         "用于展示智能体流程、工具调用、记忆管理和评测闭环的项目位。后续可放 GitHub 链接、演示视频、架构图和技术复盘。",
       tags: ["LLM", "Agents", "Evaluation"],
       impact: "适合放申请材料中最能代表技术水平的项目。",
+      details: ["系统架构、核心模块、工具链和评测指标可以放在这里。", "适合补充 Demo、技术难点、性能数据和个人贡献。"],
       links: [{ label: "Repository", url: "https://github.com/edgerunneres" }]
     },
     {
@@ -65,6 +66,7 @@ window.portfolioData = {
         "用于承载论文实验、数据可视化、结果对比和交互式展示。可以替换为你真实的研究系统或课程项目。",
       tags: ["Visualization", "Data", "Research"],
       impact: "把研究过程做成可读、可验证、可展示的界面。",
+      details: ["可以展示数据来源、实验设置、可视化交互和结论。", "后续适合加入论文 PDF、实验截图或在线演示。"],
       links: []
     },
     {
@@ -75,6 +77,7 @@ window.portfolioData = {
         "用于整理竞赛训练、题解、脚本、模板和复盘。后续可以按 ACM、CTF、Kaggle、数学建模等类别替换。",
       tags: ["Algorithms", "Automation", "Notes"],
       impact: "体现长期训练、复盘习惯和高压问题处理能力。",
+      details: ["可以按赛事类型整理题解、排名、训练脚本和复盘。", "把比赛成果转化成可持续积累的能力证据。"],
       links: []
     },
     {
@@ -85,6 +88,7 @@ window.portfolioData = {
         "用于展示学习路线、阅读记录、技术文章、研究笔记和个人方法论。可以链接博客、Notion、语雀或论文笔记。",
       tags: ["Knowledge", "Writing", "Systems"],
       impact: "体现持续学习、结构化表达和知识管理能力。",
+      details: ["可以连接文章、笔记、课程项目和研究阅读路线。", "适合让访问者看到你的学习密度和思考结构。"],
       links: []
     }
   ],
