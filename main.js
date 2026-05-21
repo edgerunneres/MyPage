@@ -1,6 +1,9 @@
 (function () {
   const data = window.portfolioData;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const compactViewport = window.matchMedia("(max-width: 760px)").matches;
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const desktopMotion = !reducedMotion && finePointer && !compactViewport;
 
   function byId(id) {
     return document.getElementById(id);
@@ -297,7 +300,7 @@
   }
 
   function initTilt() {
-    if (reducedMotion) return;
+    if (!desktopMotion) return;
     document.querySelectorAll(".tilt-card").forEach((card) => {
       card.addEventListener("pointermove", (event) => {
         const rect = card.getBoundingClientRect();
@@ -314,7 +317,7 @@
   }
 
   function initMagneticButtons() {
-    if (reducedMotion) return;
+    if (!desktopMotion) return;
     document.querySelectorAll(".magnetic").forEach((button) => {
       button.addEventListener("pointermove", (event) => {
         const rect = button.getBoundingClientRect();
@@ -335,12 +338,12 @@
       preloader.classList.add("is-complete");
       window.setTimeout(() => preloader.remove(), reducedMotion ? 0 : 520);
     };
-    window.setTimeout(hide, reducedMotion ? 80 : 980);
+    window.setTimeout(hide, reducedMotion ? 80 : compactViewport ? 620 : 980);
   }
 
   function initCursorOrb() {
     const orb = byId("cursor-orb");
-    if (!orb || reducedMotion) return;
+    if (!orb || !desktopMotion) return;
     let targetX = window.innerWidth * 0.5;
     let targetY = window.innerHeight * 0.35;
     let currentX = targetX;
@@ -368,7 +371,7 @@
 
   function initClickEffects() {
     const layer = byId("click-layer");
-    if (!layer || reducedMotion) return;
+    if (!layer || !desktopMotion) return;
     window.addEventListener("pointerdown", (event) => {
       const ripple = el("span", "click-ripple");
       ripple.style.left = `${event.clientX}px`;
@@ -410,7 +413,7 @@
     spotlightButton.addEventListener("click", () => {
       const candidates = sections.filter((section) => section.id || section.querySelector("h2"));
       const section = candidates[Math.floor(Math.random() * candidates.length)];
-      section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+      section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: compactViewport ? "start" : "center" });
       section.classList.remove("is-spotlight");
       window.setTimeout(() => section.classList.add("is-spotlight"), 120);
       window.setTimeout(() => section.classList.remove("is-spotlight"), 1500);
@@ -483,7 +486,7 @@
       raf = requestAnimationFrame(draw);
     }
 
-    if (reducedMotion) return;
+    if (!desktopMotion) return;
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener(
