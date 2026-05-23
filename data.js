@@ -1,202 +1,221 @@
 window.portfolioData = {
   profile: {
-    handle: "edgerunneres",
-    displayName: "Yupei / edgerunneres",
+    handle: "Yupei Lin / edgerunneres",
+    displayName: "于沛霖",
     headline:
-      "面向申请、交流和合作的个人档案页。集中展示项目、研究、竞赛、论文、奖项、组织经历与完整履历。",
-    role: "Software engineer / Research builder",
-    location: "China",
-    avatar: "https://github.com/edgerunneres.png?size=420",
+      "武汉大学遥感信息工程学院本科在读，武汉大学特色化软件工程示范班学生。关注多模态大模型数据集与多智能体系统，正在把申请材料、研究线索和可验证项目整理成统一档案。",
+    role: "武汉大学 · 遥感信息工程学院 · 特色化软件工程示范班",
+    location: "Wuhan / Tianjin",
+    avatar: "./assets/avatar.jpg",
     intro:
-      "我希望把技术实现、研究问题和真实场景连接起来。这个页面先以结构化占位内容搭好框架，后续可以逐步替换为真实项目、论文、比赛、奖项和经历，让访问者在短时间内理解我的能力证据、成长轨迹和合作方向。",
-    footer: "© edgerunneres. Built for applications, research, and collaboration."
+      "我目前在武汉大学遥感信息工程学院学习，研究兴趣集中在多模态大模型数据集、多智能体系统，以及空间信息数字技术与智能系统的结合。这个页面先把已有申请材料中可确认的信息、上海创智学院 2026 年夏令营报名侧重点，以及后续需要补充的大学阶段证据整理出来，方便继续迭代成正式个人主页。",
+    footer: "© 于沛霖. Built for applications, research, and collaboration."
   },
 
   metrics: [
-    { label: "Projects", value: 8, suffix: "+", detail: "工程项目与开源实践" },
-    { label: "Research", value: 3, suffix: "+", detail: "研究方向与论文草稿" },
-    { label: "Competitions", value: 6, suffix: "+", detail: "竞赛与挑战经历" },
-    { label: "Awards", value: 5, suffix: "+", detail: "奖项与荣誉记录" }
+    { label: "WHU", value: 24, suffix: "级", detail: "武汉大学本科在读" },
+    { label: "Research", value: 2, suffix: "条", detail: "多模态数据集 / 多智能体系统" },
+    { label: "Applications", value: 2, suffix: "份", detail: "已参考的历史申请 Word 材料" },
+    { label: "Pending", value: 1, suffix: "批", detail: "大学阶段核心信息待补充" }
   ],
 
   pillars: [
     {
-      title: "工程深度",
-      kicker: "Build",
-      body: "展示可运行项目、架构决策、性能优化、自动化流程和真实交付结果。",
-      icon: "cpu"
+      title: "学业背景",
+      kicker: "Education",
+      body: "武汉大学遥感信息工程学院本科在读，当前身份聚焦在特色化软件工程示范班与空间信息数字技术相关培养路径。",
+      icon: "graduation-cap"
     },
     {
-      title: "研究能力",
+      title: "研究主线",
       kicker: "Research",
-      body: "沉淀研究主题、论文、实验记录、阅读笔记和问题定义能力。",
+      body: "目前关注多模态大模型数据集建设、多智能体系统设计，以及模型能力在真实任务中的组织、协作和评测。",
       icon: "microscope"
     },
     {
-      title: "竞赛证明",
-      kicker: "Compete",
-      body: "用比赛、排名、题解和作品说明压力场景下的解决问题能力。",
-      icon: "trophy"
+      title: "申请材料",
+      kicker: "Dossier",
+      body: "根据夏令营报名页，需要继续补齐绩点排名、英语成绩、科研论文、竞赛获奖、项目链接、推荐人与补充材料。",
+      icon: "clipboard-check"
     },
     {
-      title: "组织影响",
-      kicker: "Lead",
-      body: "记录社团、实验室、项目组、志愿活动和跨团队协作经历。",
+      title: "综合能力",
+      kicker: "Breadth",
+      body: "历史材料体现出较强数理基础、创新实践、表达组织、辩论主持、音乐制作与跨领域学习经历。",
       icon: "network"
     }
   ],
 
   projects: [
     {
-      title: "AI Agent Workflow Studio",
-      period: "2026",
-      status: "可替换为真实项目",
+      title: "多模态大模型数据集方向",
+      period: "2026 - Now",
+      status: "研究方向 / 项目待补充",
       summary:
-        "用于展示智能体流程、工具调用、记忆管理和评测闭环的项目位。后续可放 GitHub 链接、演示视频、架构图和技术复盘。",
-      tags: ["LLM", "Agents", "Evaluation"],
-      impact: "适合放申请材料中最能代表技术水平的项目。",
-      details: ["系统架构、核心模块、工具链和评测指标可以放在这里。", "适合补充 Demo、技术难点、性能数据和个人贡献。"],
-      links: [{ label: "Repository", url: "https://github.com/edgerunneres" }]
-    },
-    {
-      title: "Research Visualization System",
-      period: "2025 - 2026",
-      status: "研究工具",
-      summary:
-        "用于承载论文实验、数据可视化、结果对比和交互式展示。可以替换为你真实的研究系统或课程项目。",
-      tags: ["Visualization", "Data", "Research"],
-      impact: "把研究过程做成可读、可验证、可展示的界面。",
-      details: ["可以展示数据来源、实验设置、可视化交互和结论。", "后续适合加入论文 PDF、实验截图或在线演示。"],
+        "围绕高质量多模态样本组织、标注规范、数据筛选、评测集构建与误差分析展开。后续需要补充具体项目名、数据规模、个人贡献和可展示链接。",
+      tags: ["Multimodal LLM", "Dataset", "Evaluation"],
+      impact: "适合作为申请材料中最能体现研究潜力的一条主线。",
+      details: [
+        "待补充：参与项目、数据来源、标注流程、质量控制方法和实验结果。",
+        "待补充：GitHub、Hugging Face、报告 PDF、演示截图或可复现实验说明。"
+      ],
       links: []
     },
     {
-      title: "Competition Toolkit",
-      period: "2025",
-      status: "竞赛沉淀",
+      title: "多智能体系统方向",
+      period: "2026 - Now",
+      status: "研究方向 / Demo 待补充",
       summary:
-        "用于整理竞赛训练、题解、脚本、模板和复盘。后续可以按 ACM、CTF、Kaggle、数学建模等类别替换。",
-      tags: ["Algorithms", "Automation", "Notes"],
-      impact: "体现长期训练、复盘习惯和高压问题处理能力。",
-      details: ["可以按赛事类型整理题解、排名、训练脚本和复盘。", "把比赛成果转化成可持续积累的能力证据。"],
+        "关注智能体之间的任务分解、角色协作、工具调用、记忆管理和失败恢复。页面后续可放系统架构、关键模块、评测方法与运行演示。",
+      tags: ["Agents", "Tool Use", "Workflow"],
+      impact: "适合展示系统设计能力，以及把大模型能力落到复杂流程中的工程判断。",
+      details: [
+        "待补充：系统目标、agent 角色设计、工具链、任务案例和失败样例分析。",
+        "待补充：可运行 Demo、代码仓库、实验日志和技术复盘。"
+      ],
       links: []
     },
     {
-      title: "Personal Knowledge Base",
+      title: "空间信息数字技术与智慧城市兴趣线索",
       period: "2024 - Now",
-      status: "长期项目",
+      status: "专业方向",
       summary:
-        "用于展示学习路线、阅读记录、技术文章、研究笔记和个人方法论。可以链接博客、Notion、语雀或论文笔记。",
-      tags: ["Knowledge", "Writing", "Systems"],
-      impact: "体现持续学习、结构化表达和知识管理能力。",
-      details: ["可以连接文章、笔记、课程项目和研究阅读路线。", "适合让访问者看到你的学习密度和思考结构。"],
+        "此前空间信息数字技术试验班申请材料中，重点表达了对遥感、空间信息数字化、智慧城市和城市数据系统的兴趣。当前主页保留这条交叉方向，后续可接入课程项目或科研经历。",
+      tags: ["Remote Sensing", "Spatial Data", "Smart City"],
+      impact: "连接武汉大学遥感背景、软件工程训练和人工智能系统应用场景。",
+      details: [
+        "历史材料中提到对城市数据、三维地图、疫情管控、绿化施工信息数字化等应用场景的关注。",
+        "待补充：大学阶段空间信息、遥感、软件工程相关课程项目和实验成果。"
+      ],
       links: []
+    },
+    {
+      title: "申请材料待补充清单（SII 2026 夏令营）",
+      period: "2026",
+      status: "材料清单",
+      summary:
+        "根据公开报名页前端字段，夏令营申请侧重学业信息、科研论文、竞赛获奖、英语成绩、项目经历、GitHub 或 Hugging Face 项目、推荐人与补充材料。",
+      tags: ["Application", "Checklist", "SII"],
+      impact: "这个卡片用于后续逐项替换成可验证证据，避免主页继续停留在空框架。",
+      details: [
+        "待补充：本科绩点、满分绩点、专业排名、专业人数、成绩单和排名证明。",
+        "待补充：四/六级、雅思、托福或其他英语成绩及证明材料。",
+        "待补充：科研情况、论文、竞赛获奖、项目名、项目简介、代码行数、star 数和项目链接。",
+        "待补充：报考方向、赛题选择、推荐人信息和补充材料包。"
+      ],
+      links: [
+        {
+          label: "SII application",
+          url: "https://admissions.sii.edu.cn/recruit_students/signUp?activityId=ebf23f0acfca412eb4febfbf1dd4b736&studyYear=2027%E5%B9%B49%E6%9C%88&activityType=4&name=2026%E5%B9%B4%E5%A4%8F%E4%BB%A4%E8%90%A5&activityStatus=5&requiredExtraEnter=0&isWrittenQuestionnaire=1&isApplicationDirection=1"
+        }
+      ]
     }
   ],
 
   research: [
     {
-      title: "Multimodal Agent Reliability",
-      period: "Topic A",
+      title: "多模态大模型数据集",
+      period: "Primary direction",
       body:
-        "占位研究方向：关注多模态智能体在复杂任务中的稳定性、工具选择、错误恢复和评测方法。",
-      methods: ["Benchmark design", "Failure analysis", "Human-in-the-loop"]
+        "重点关注如何构建可训练、可评测、可复核的多模态数据集，包括样本组织、标注一致性、数据质量控制、任务覆盖和模型反馈闭环。",
+      methods: ["Data curation", "Evaluation design", "Error analysis"]
     },
     {
-      title: "Applied AI Systems",
-      period: "Topic B",
+      title: "多智能体系统",
+      period: "Primary direction",
       body:
-        "占位研究方向：关注模型能力如何进入真实系统，包括接口设计、数据闭环、可观测性和成本控制。",
-      methods: ["System design", "A/B evaluation", "Observability"]
+        "关注复杂任务中多个智能体的分工、协作和控制，包括工具调用、计划执行、上下文管理、失败恢复和可观测评测。",
+      methods: ["Agent workflow", "Tool orchestration", "System evaluation"]
     },
     {
-      title: "Human-Computer Interaction",
-      period: "Topic C",
+      title: "空间信息与智能应用",
+      period: "Cross-domain",
       body:
-        "占位研究方向：关注信息呈现、交互效率、复杂工具的可理解性，以及面向用户的 AI 工作流。",
-      methods: ["UX research", "Prototyping", "Interaction metrics"]
+        "结合遥感信息工程与软件工程背景，关注空间数据、城市数字化、三维地图和智能分析系统如何服务真实场景。",
+      methods: ["Spatial data", "Remote sensing", "Applied AI"]
     }
   ],
 
   papers: [
     {
-      title: "Paper title to be added",
-      venue: "Under preparation",
+      title: "多模态大模型数据集方向研究记录",
+      venue: "To be added",
       year: "2026",
-      description: "这里可以放论文题目、作者顺序、会议/期刊、PDF、代码和摘要。"
+      description: "待补充具体论文、技术报告、实验记录或数据集说明。"
     },
     {
-      title: "Technical report / preprint",
-      venue: "Draft",
-      year: "2025",
-      description: "也可以放课程论文、研究报告、预印本或实验室内部报告。"
+      title: "多智能体系统实验报告 / 技术复盘",
+      venue: "To be added",
+      year: "2026",
+      description: "待补充系统 Demo、评测结果、失败案例分析和代码链接。"
     }
   ],
 
   proof: [
     {
-      type: "competition",
-      title: "Competition record placeholder",
-      meta: "2026 / Rank or award",
-      body: "替换为真实比赛名称、队伍角色、排名、题目方向和关键贡献。",
+      type: "award",
+      title: "第 39 届全国中学生物理竞赛三等奖",
+      meta: "2022 / 中国物理学会等",
+      body: "历史申请材料中记录为省级部三等奖，体现早期数理基础与物理竞赛训练经历。",
       icon: "medal"
     },
     {
-      type: "competition",
-      title: "Hackathon / Challenge project",
-      meta: "2025 / Finalist",
-      body: "可以放黑客松、创新创业比赛、算法挑战、建模比赛或安全竞赛经历。",
-      icon: "flag"
-    },
-    {
       type: "award",
-      title: "Award or scholarship",
-      meta: "2025 / Institution",
-      body: "替换为奖学金、优秀学生、竞赛奖项、论文奖或项目荣誉。",
+      title: "天津市河西区区级优秀学生",
+      meta: "2024 / 天津市河西区教育局",
+      body: "历史申请材料中记录的综合荣誉，可作为早期综合发展与稳定学习表现的证据。",
       icon: "award"
     },
     {
-      type: "activity",
-      title: "Conference / Workshop / Volunteer",
-      meta: "2024 - 2026",
-      body: "记录参加过的会议、讲座、workshop、志愿活动和公开展示。",
-      icon: "calendar-days"
-    },
-    {
       type: "organization",
-      title: "Lab / Club / Open-source community",
-      meta: "Member / Organizer",
-      body: "记录加入过的实验室、社团、项目组、开源组织，以及承担的职责。",
+      title: "武汉大学学生会未来学院申请经历",
+      meta: "2024 / 武汉大学",
+      body: "报名材料中选择文艺活动工作方向，文字材料体现主持、活动组织、舞台内容创作和跨团队协作经历。",
       icon: "users"
     },
     {
-      type: "award",
-      title: "Publication / Project recognition",
-      meta: "To be filled",
-      body: "可以放论文录用、专利、软件著作权、课程项目优秀展示等成果。",
+      type: "activity",
+      title: "创新实践与跨学科探索",
+      meta: "中学阶段 / 待大学阶段补充",
+      body: "历史材料记录了智能小车、传统榫卯结构现代化模型、细菌纯化培养、学科报纸创作编辑等实践活动。",
+      icon: "lightbulb"
+    },
+    {
+      type: "activity",
+      title: "表达、辩论与文艺组织能力",
+      meta: "长期经历",
+      body: "材料中提到朗诵主持、校广播站、辩论比赛、最佳辩手、话剧小品展演、音乐制作和美术创作等经历。",
+      icon: "messages-square"
+    },
+    {
+      type: "competition",
+      title: "大学阶段核心成果待补充",
+      meta: "Next update",
+      body: "后续应优先补充大学期间科研项目、竞赛、奖项、论文、课程项目、实验室经历、GPA/排名和英语成绩。",
       icon: "badge-check"
     }
   ],
 
   timeline: [
     {
-      period: "Now",
-      title: "Portfolio system launch",
-      body: "个人主页框架搭建完成，后续逐步填充真实项目、研究、论文和履历内容。"
-    },
-    {
       period: "2026",
-      title: "Application-ready dossier",
-      body: "把申请中需要证明的经历整理成清晰、可链接、可验证的证据链。"
+      title: "申请档案与个人主页整理",
+      body: "围绕上海创智学院 2026 年夏令营申请字段，先整理已确认背景、研究方向和材料缺口。"
     },
     {
-      period: "2025",
-      title: "Projects, research and competitions",
-      body: "在项目、研究、竞赛、社团和活动中积累可展示成果。"
+      period: "2024 - Now",
+      title: "武汉大学遥感信息工程学院本科在读",
+      body: "当前在武汉大学遥感信息工程学院学习，身份聚焦特色化软件工程示范班与空间信息数字技术相关培养。"
+    },
+    {
+      period: "2024",
+      title: "空间信息数字技术试验班申请",
+      body: "申请材料中系统阐述了对遥感、空间信息数字化、智慧城市和软件系统的兴趣。"
     },
     {
       period: "Earlier",
-      title: "Foundation and exploration",
-      body: "补充教育背景、课程、基础训练、早期项目和重要转折点。"
+      title: "数理基础与综合探索",
+      body: "天津成长经历、物理竞赛、创新实践、文艺组织、辩论表达和公益活动共同构成早期能力背景。"
     }
   ],
 
@@ -209,14 +228,14 @@ window.portfolioData = {
     },
     {
       label: "Email",
-      value: "your.email@example.com",
-      url: "mailto:your.email@example.com",
+      value: "yu_peilin324@163.com",
+      url: "mailto:yu_peilin324@163.com",
       icon: "mail"
     },
     {
-      label: "Resume",
-      value: "Add PDF link",
-      url: "#",
+      label: "Materials",
+      value: "GPA / rank / English / research links to be added",
+      url: "#projects",
       icon: "file-text"
     }
   ]

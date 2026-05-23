@@ -51,7 +51,7 @@
       const number = el("strong");
       number.dataset.countTo = metric.value;
       number.dataset.suffix = metric.suffix || "";
-      number.textContent = `0${metric.suffix || ""}`;
+      number.textContent = `${metric.value}${metric.suffix || ""}`;
       card.append(number, el("span", "", metric.label), el("small", "", metric.detail));
       board.append(card);
     });
@@ -183,7 +183,7 @@
     data.contacts.forEach((contact) => {
       const anchor = el("a", "contact-card tilt-card");
       anchor.href = contact.url;
-      if (!contact.url.startsWith("mailto:") && contact.url !== "#") {
+      if (!contact.url.startsWith("mailto:") && !contact.url.startsWith("#")) {
         anchor.target = "_blank";
         anchor.rel = "noreferrer";
       }
@@ -218,6 +218,14 @@
     );
 
     targets.forEach((target) => observer.observe(target));
+    window.setTimeout(() => {
+      targets.forEach((target) => {
+        if (target.classList.contains("is-visible")) return;
+        if (target.getBoundingClientRect().top < window.innerHeight + 160) {
+          target.classList.add("is-visible");
+        }
+      });
+    }, 420);
   }
 
   function initCounters() {
